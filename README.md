@@ -7,7 +7,7 @@ It is fork of [script](https://greasyfork.org/en/scripts/26654-netflix-subtitle-
 
 ## Install
 
-You can isntall it from Chrome Store following next [link]().
+You can isntall it from Chrome Store following next [link](https://chrome.google.com/webstore/detail/netflix-subtitle-loader/mecgfapokkplnpecnffhofjblngkikid?hl=en-US).
 
 In case something go wrong with distribution via store, you can manually install extension following next instructions:
 Download packed extension from [releases](https://github.com/vanIvan/Netflix-Subtitle-Loader/releases) page.
