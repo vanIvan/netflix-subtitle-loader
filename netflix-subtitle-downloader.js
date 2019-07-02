@@ -133,7 +133,7 @@ const _download = async _zip => {
     downloaded.push({lang, data});
   }
   const title = await titleP;  
-  const name = [seriesName.replace(/\s/mg,"."), seasonEpisode].join(".");
+  const name = [seriesName.replace(/\s/mg,"."), seasonEpisode].join(".").replace( /[<>:"\/\\|?*]+/g,'');
   downloaded.forEach(x => {
     const {lang, data} = x;
     switch(format){
@@ -146,7 +146,7 @@ const _download = async _zip => {
     }
   });
 
-  return await [name, format.toUpperCase()].join(".");
+  return await [name, format.toUpperCase()].join(".").replace( /[<>:"\/\\|?*]+/g, '' );
 };
 
 const downloadThis = async () => {  
