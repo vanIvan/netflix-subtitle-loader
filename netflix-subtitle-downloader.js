@@ -124,7 +124,6 @@ const _save = async (_zip, title) => {
 
 // All timestamped lines
 const _download = async _zip => {  
-  format = $("#subtitle-format-selector li.selected")[0].dataset.uia;   
   const {titleP, subs} = subCache[getMovieID()];
   const downloaded = [];
   for(const [lang, url] of Object.entries(subs)) {
@@ -230,6 +229,7 @@ const addFormatSelectEvListeners = ()=>{
   $("#subtitle-format-selector li.format-track").on('click', function(ev){
     $("#subtitle-format-selector li.format-track").removeClass("selected");
     ev.target.classList.add("selected");
+    format = ev.target.dataset.uia;
   });
 }
 

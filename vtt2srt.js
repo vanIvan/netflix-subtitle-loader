@@ -3,10 +3,7 @@ const vtt2srt = (vttStr) =>{
       .replace(/(\d\d:\d\d:\d\d).(\d\d\d) --> (\d\d:\d\d:\d\d).(\d\d\d)(.*)\n/g, '$1.$2 --> $3,$4\n')
       .replace(/(\d\d:\d\d).(\d\d\d) --> (\d\d:\d\d).(\d\d\d)(.*)\n/g, '$1.$2 --> $3,$4\n')
       .replace(/(\d\d).(\d\d\d) --> (\d\d).(\d\d\d)(.*)\n/g, '$1.$2 --> $3,$4\n')
-      .replace(/\<.+\>(.+)/g, '$1')
-      .replace(/\<.+\>(.+)\<.+\/\>/g, '$1')
-      .replace(/<c[.\w\d]*>/g,'')
-      .replace(/<\/c[.\w\d]*>/g,'')
+      .replace(/\<.+\>([^\<\>]+)\<\/.+\>/g, '$1')
       .replace(/\-?\[.*\]/g,'');
     const ptrn = /(^\d+\n)(.*(?:\r?\n?))((?<!\n).*(?:\r?\n(?!\r?\n).*)*)/mg;
     var match = ptrn.exec(srtUnfilteredStr);
